@@ -31,7 +31,7 @@ In example:
 
 ## Additional Resources
 
-In my personal blog "[ElBruno.com](https://elbruno.com)", I wrote about several scenarios on how to work and code with [Custom Vision](https://elbruno.com/tag/custom-vision/). 
+In my personal blog "[ElBruno.com](https://elbruno.com)", I wrote about several scenarios on how to work and code with [Rust OpenAI APIs](https://github.com/elbruno/RustOpenAIAPIs/). 
 
 ## Author
 
