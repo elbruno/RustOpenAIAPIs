@@ -1,0 +1,19 @@
+{
+    "id": "cmpl-6kZnXlx8dFcyDRvSa9ZuseuoZBL1b",
+    "object": "text_completion",
+    "created": 1676558715,
+    "model": "text-davinci-003",
+    "choices": [
+      {
+        "text": "\n\nRust is a modern programming language that aims to empower users with the ability to create fast, safe, and reliable software. It is an open source language developed by the Mozilla Research Lab and backed by a vibrant open source community. Rust emphasizes safety, speed, and concurrency. It is designed to be a practical language that provides memory safety without a garbage collector and fast performance without sacrificing safety. Rust also enables low-level memory manipulation, giving developers the freedom to implement more efficient algorithms and data structures. Furthermore, Rust’s type system and its strict compile-time checks help catch and prevent many kinds of bugs before they can occur. Rust is suitable for a wide range of use cases, from embedded systems to web backends.",
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6,
+      "completion_tokens": 149,
+      "total_tokens": 155
+    }
+  }

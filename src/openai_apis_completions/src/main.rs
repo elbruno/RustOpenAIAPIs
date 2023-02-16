@@ -4,6 +4,41 @@ use reqwest::header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE};
 use serde::{Deserialize, Serialize};
 use std::env;
 
+use serde_json::Value;
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Root {
+    pub id: String,
+    pub object: String,
+    pub created: i64,
+    pub model: String,
+    pub choices: Vec<Choice>,
+    pub usage: Usage,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Choice {
+    pub text: String,
+    pub index: i64,
+    pub logprobs: Value,
+    #[serde(rename = "finish_reason")]
+    pub finish_reason: String,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Usage {
+    #[serde(rename = "prompt_tokens")]
+    pub prompt_tokens: i64,
+    #[serde(rename = "completion_tokens")]
+    pub completion_tokens: i64,
+    #[serde(rename = "total_tokens")]
+    pub total_tokens: i64,
+}
+
+
 #[tokio::main]
 async fn main() {
     let data = r#"
@@ -43,7 +78,10 @@ async fn main() {
             println!("🔥 Response: {:#?}", response);
         }
         reqwest::StatusCode::UNAUTHORIZED => {
-            println!("Need to grab a new token");
+            println!("Status: UNAUTHORIZED - Need to grab a new token");
+        }
+        reqwest::StatusCode::TOO_MANY_REQUESTS => {
+            println!("Status: 429 - Too many requests");
         }
         other => {
             panic!("Uh oh! Something unexpected happened: [{:#?}]", other);
