@@ -49,18 +49,20 @@ async fn main() {
         "max_tokens": 1024
     }"#;
 
+    let args: Vec<String> = env::args().collect();
+    let auth_token = &args[1];
+    let prompt = &args[2];
+
     let mut map = HashMap::new();
     map.insert("model", "text-davinci-003");
-    map.insert("prompt", "describe rust programming language");
+    map.insert("prompt", prompt);
     map.insert("temperature", "0.9");
     map.insert("max_tokens", "1024");
 
-    let args: Vec<String> = env::args().collect();
-    let auth_token = &args[1];
 
     println!("Auth token: {}", auth_token);
     let bearer_auth = format!("Bearer {}", auth_token);
-    println!("Bearer Auth token: {}", bearer_auth);
+    println!("Prompt: {}", prompt);
 
     let url = "https://api.openai.com/v1/completions".to_string();
     let client = reqwest::Client::new();
@@ -75,7 +77,15 @@ async fn main() {
         .unwrap();
     match response.status() {
         reqwest::StatusCode::OK => {
-            println!("🔥 Response: {:#?}", response);
+
+            match response.json::<Root>().await {
+                Ok(parsed) => {
+                    println!("🔥 Success!");
+                    println!("💬 Response: {}", parsed.choices[0].text);
+                },
+                Err(_) => println!("Hm, the response didn't match the shape we expected."),
+            };
+
         }
         reqwest::StatusCode::UNAUTHORIZED => {
             println!("Status: UNAUTHORIZED - Need to grab a new token");
