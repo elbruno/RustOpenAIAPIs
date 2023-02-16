@@ -5,13 +5,17 @@
 ![GitHub: elbruno](https://img.shields.io/github/followers/elbruno?style=social)
 
 🧠 OpenAI APIs can be used with the Rust programming language to provide developers with access to powerful artificial intelligence systems. 
+
 🦀 The Rust programming language is an open source language that has been designed with safety and speed in mind. 
+
 ⚙️ To use OpenAI APIs with Rust, developers must first install the Rust compiler, Rust libraries, and the OpenAI SDK. Once these components are installed, developers can invoke OpenAI APIs using standard HTTP POST and GET actions.
 
 ## Resources
-- [Take your first steps with Rust](https://learn.microsoft.com/training/paths/rust-first-steps/).
-- [Setup Rust Development Environment](https://learn.microsoft.com/training/modules/rust-set-up-environment/).
-- [OpenAI API Introduction](https://platform.openai.com/docs/introduction).
+- [Take your first steps with Rust](https://learn.microsoft.com/training/paths/rust-first-steps/)
+- [Setup Rust Development Environment](https://learn.microsoft.com/training/modules/rust-set-up-environment/)
+- [OpenAI API Introduction](https://platform.openai.com/docs/introduction)
+- [OpenAI API Text Completions](https://platform.openai.com/docs/guides/completion)
+
  
 ## Sample Code
 
@@ -28,6 +32,20 @@ In example:
 ```bash
 ❯ cargo run <OpenAI API Key> "<Prompt>"
 ```
+
+Will return:
+
+```bash
+cargo run <API Key> "generate a 2 paragraph description on how to use OpenAI APIs using Rust programming language"
+    Finished dev [unoptimized + debuginfo] target(s) in 3.04s
+     
+Prompt: generate a 2 paragraph description on how to use OpenAI APIs using Rust programming language
+🔥 Success!
+💬 Response:
+
+OpenAI APIs can be used with the Rust programming language to provide developers with access to powerful artificial intelligence systems. ...
+```
+
 
 ## Additional Resources
 
