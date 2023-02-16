@@ -41,24 +41,26 @@ pub struct Usage {
 
 #[tokio::main]
 async fn main() {
-    let data = r#"
-    {
-        "model": "text-davinci-003",
-        "prompt": "Describe the Rust programming language",
-        "temperature": 0.9,
-        "max_tokens": 1024
-    }"#;
-
     let args: Vec<String> = env::args().collect();
     let auth_token = &args[1];
     let prompt = &args[2];
+
+    let mut data: String = r#"
+    {
+        "model": "text-davinci-003",
+        "prompt": "{}",
+        "temperature": 0.9,
+        "max_tokens": 1024
+    }"#.to_string();
+    data = format! {"{}", data.replace("{}", prompt)};
+
+
 
     let mut map = HashMap::new();
     map.insert("model", "text-davinci-003");
     map.insert("prompt", prompt);
     map.insert("temperature", "0.9");
     map.insert("max_tokens", "1024");
-
 
     println!("Auth token: {}", auth_token);
     let bearer_auth = format!("Bearer {}", auth_token);
