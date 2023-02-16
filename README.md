@@ -46,7 +46,7 @@ In my personal blog "[ElBruno.com](https://elbruno.com)", I wrote about several 
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://github.com/elbruno/CustomVisionAndAzureFunctions/issues).
+Feel free to check [issues page](https://github.com/elbruno/RustOpenAIAPIs/issues).
 
 ## Show your support
 
