@@ -79,8 +79,6 @@ async fn main() {
     }"#.to_string();
     data = format! {"{}", data.replace("{}", prompt)};
 
-
-
     let mut map = HashMap::new();
     map.insert("model", "text-davinci-003");
     map.insert("prompt", prompt);
