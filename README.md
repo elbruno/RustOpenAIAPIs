@@ -15,17 +15,24 @@
 - [Setup Rust Development Environment](https://learn.microsoft.com/training/modules/rust-set-up-environment/)
 - [OpenAI API Introduction](https://platform.openai.com/docs/introduction)
 - [OpenAI API Text Completions](https://platform.openai.com/docs/guides/completion)
+- [OpenAI API Image Generation](https://platform.openai.com/docs/guides/images)
 
  
 ## Sample Code
 
+### Text Completions
+
 You can view a sample console app using GPT-3 Completions code in the "[src/openai_apis_completions/](src/openai_apis_completions/)" directory in this repository.
 
-## Testing the sample
+### Image Generation
+
+You can view a sample console app using DALL-E image generation model code in the "[src/openai_apis_image_generations/](src/openai_apis_image_generations/)" directory in this repository.
+
+## Testing the samples
 
 Cargo run is the easiest way to test the OpenAI Completions sample app. 
 
-The app receives 2 parametres: API Key and Prompt.
+The console app receives 2 parametres: API Key and Prompt.
 
 In example:
 
@@ -33,7 +40,7 @@ In example:
 ❯ cargo run <OpenAI API Key> "<Prompt>"
 ```
 
-Will return:
+This is a sample output for the **text completion** scenario
 
 ```bash
 cargo run <API Key> "generate a 2 paragraph description on how to use OpenAI APIs using Rust programming language"
@@ -46,10 +53,31 @@ Prompt: generate a 2 paragraph description on how to use OpenAI APIs using Rust 
 OpenAI APIs can be used with the Rust programming language to provide developers with access to powerful artificial intelligence systems. ...
 ```
 
+This is a sample output for the **image generarion** scenario
+
+```bash
+cargo run <API Key> "a cat playing soccer on the moon"
+    Finished dev [unoptimized + debuginfo] target(s) in 0.83s
+     
+Prompt: a cat playing soccer on mars
+🔥 Success!
+💬 Response: https://<location of the generated image>
+
+```
+
+And this is the generated image of a cat playing soccer on the moon:
+
+![a cat playing soccer on the moon](img/catmoonsoccer.png "a cat playing soccer on the moon")
+
+
+
+
+
+
 
 ## Additional Resources
 
-In my personal blog "[ElBruno.com](https://elbruno.com)", I wrote about several scenarios on how to work and code with [Rust OpenAI APIs](https://github.com/elbruno/RustOpenAIAPIs/). 
+In my personal blog "[ElBruno.com](https://elbruno.com)", I wrote about several scenarios on how to work and code with [Rust](https://elbruno.com/tag/rust/). 
 
 ## Author
 
