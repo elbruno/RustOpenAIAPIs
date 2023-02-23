@@ -3,7 +3,6 @@
    Author      : Bruno Capuano
    Create Time : 2023 Feb
    Change Log  :
-   - Demo to find variables data type
    
    The MIT License (MIT)
    Permission is hereby granted, free of charge, to any person obtaining a copy
