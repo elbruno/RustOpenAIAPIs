@@ -33,6 +33,7 @@ You can view a sample console app using DALL-E image generation model code in th
 
 You can view a sample console app that runs as a chat, using ChatGPT model {gpt-3.5-turbo}. The code for this sample is in the "[src/openai_apis_chatgpt/](src/openai_apis_chatgpt/)" directory in this repository.
 
+_Disclaimer: This scenario does not implement a multi-turn conversations model. Right now, the scenario is a single-turn Q&A without any conversations._
 
 ## Testing scenarios 1 and 2
 
