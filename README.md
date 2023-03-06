@@ -16,6 +16,7 @@
 - [OpenAI API Introduction](https://platform.openai.com/docs/introduction)
 - [OpenAI API Text Completions](https://platform.openai.com/docs/guides/completion)
 - [OpenAI API Image Generation](https://platform.openai.com/docs/guides/images)
+- [OpenAI API Chat Completion](https://platform.openai.com/docs/guides/chat)
 
  
 ## Scenarios
