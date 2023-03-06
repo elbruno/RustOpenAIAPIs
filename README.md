@@ -18,21 +18,26 @@
 - [OpenAI API Image Generation](https://platform.openai.com/docs/guides/images)
 
  
-## Sample Code
+## Scenarios
 
-### Text Completions
+### 1. Text Completions
 
 You can view a sample console app using GPT-3 Completions code in the "[src/openai_apis_completions/](src/openai_apis_completions/)" directory in this repository.
 
-### Image Generation
+### 2. Image Generation
 
 You can view a sample console app using DALL-E image generation model code in the "[src/openai_apis_image_generations/](src/openai_apis_image_generations/)" directory in this repository.
 
-## Testing the samples
+### 3. ChatGPT API in a chat console app
 
-Cargo run is the easiest way to test the OpenAI Completions sample app. 
+You can view a sample console app that runs as a chat, using ChatGPT model {gpt-3.5-turbo}. The code for this sample is in the "[src/openai_apis_chatgpt/](src/openai_apis_chatgpt/)" directory in this repository.
 
-The console app receives 2 parametres: API Key and Prompt.
+
+## Testing scenarios 1 and 2
+
+Cargo run is the easiest way to test the OpenAI Completions and the Image Generation sample apps. 
+
+In scenarios 1 and 2, the console app receives 2 parametres: API Key and Prompt.
 
 In example:
 
@@ -69,11 +74,44 @@ And this is the generated image of a cat playing soccer on the moon:
 
 ![a cat playing soccer on the moon](img/catmoonsoccer.png "a cat playing soccer on the moon")
 
+## Testing scenario 3
 
+Cargo run is the easiest way to test the OpenAI ChatGPT sample app. 
 
+In scenario 3, the console app receives 1 parametres: API Key.
 
+In example:
 
+```bash
+❯ cargo run <OpenAI API Key>
+```
 
+This is a sample output for the **chatgpt console app** scenario
+
+```bash
+Welcome to ChatGPT API demo in Rust!
+ 
+====================================
+Please enter a question or [exit] to stop:
+2 + 2
+Your question: 2 + 2
+
+🔥 Success!
+💬 Response: 2 + 2 equals 4.
+
+====================================
+Please enter a question or [exit] to stop:
+what is the rust programming language?
+Your question: what is the rust programming language?
+
+🔥 Success!
+💬 Response: Rust is a system programming language that was initially developed by Mozilla in 2010. It is designed to be safe, concurrent, and fast while also being memory efficient. Rust was created to address the challenges of writing secure and scalable system software, by providing modern language features such as ownership, borrowing, and lifetimes, which help to prevent common programming errors such as null pointer dereferencing, data races, and buffer overflows. Rust is open source and has a growing community contributing to its development and adoption.
+
+====================================
+Please enter a question or [exit] to stop:
+exit
+Exiting...
+```
 
 ## Additional Resources
 
